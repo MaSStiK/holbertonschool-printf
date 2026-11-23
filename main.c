@@ -9,9 +9,22 @@
  */
 int main(void)
 {
-	int len;
-	int len2;
+	int len, len2;
 	unsigned int ui;
+
+	len = _printf("%d\n", -1234);
+	len2 = printf("%d\n", -1234);
+	printf("Length:[%d, %i]\n", len, len2);
+
+	len = _printf("%d %% %d\n", -1234, 42);
+	len2 = printf("%d %% %d\n", -1234, 42);
+	printf("Length:[%d, %i]\n", len, len2);
+
+	len = _printf("%s %c\n", "I am a string, and this is a char:", 'W');
+	len2 = printf("%s %c\n", "I am a string, and this is a char:", 'W');
+	printf("Length:[%d, %i]\n", len, len2);
+
+	printf("\n----- original tests -----\n");
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");

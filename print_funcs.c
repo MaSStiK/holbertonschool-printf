@@ -36,3 +36,19 @@ int print_int(int n)
 
 	return (count);
 }
+
+/**
+ * print_str - Prints a string
+ * @str: String to print
+ *
+ * Return: Number of characters printed
+ */
+int print_str(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+
+	return (i);
+}

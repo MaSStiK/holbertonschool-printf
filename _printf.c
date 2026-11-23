@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, int_num;
+	int i;
 	int length = 0;
 
 	va_start(args, format);
@@ -21,19 +21,33 @@ int _printf(const char *format, ...)
 		{
 			switch (format[i + 1])
 			{
-				case '%': /* %% print % */
+				case '%': /* %% print % symbol */
 					_putchar('%');
 					length++;
 					i++;
 					break;
 
 				case 'd': /* %d print int */
-					int_num = va_arg(args, int);
-					length += print_int(int_num);
+					length += print_int(va_arg(args, int));
+					i++;
+					break;
+
+				case 'c': /* %c print char (promoted to int in va_arg) */
+					_putchar(va_arg(args, int));
+					length++;
+					i++;
+					break;
+
+				case 's': /* %s print string (char *) */
+					length += print_str(va_arg(args, char *));
 					i++;
 					break;
 
 				default:
+					print_str("(SKIP:");
+					_putchar(format[i + 1]);
+					print_str(")");
+					i++;
 					break;
 			}
 		}
