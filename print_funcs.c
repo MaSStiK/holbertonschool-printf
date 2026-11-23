@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "main.h"
 
 /**
@@ -46,6 +47,9 @@ int print_int(int n)
 int print_str(char *str)
 {
 	int i;
+
+	if (str == NULL)
+		str = "(null)";
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);

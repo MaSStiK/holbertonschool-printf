@@ -24,6 +24,8 @@ int main(void)
 	len2 = printf("%s %c\n", "I am a string, and this is a char:", 'W');
 	printf("Length:[%d, %i]\n", len, len2);
 
+	_printf("%s\n", NULL);
+
 	printf("\n----- original tests -----\n");
 
 	len = _printf("Let's try to printf a simple sentence.\n");
