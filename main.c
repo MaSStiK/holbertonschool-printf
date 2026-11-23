@@ -25,6 +25,8 @@ int main(void)
 	printf("Length:[%d, %i]\n", len, len2);
 
 	_printf("%s\n", NULL);
+	_printf("%\n");
+	_printf("%"); /* will print nothing */
 
 	printf("\n----- original tests -----\n");
 

@@ -19,6 +19,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+			{
+				va_end(args);
+				return (-1);
+			}
+		
 			switch (format[i + 1])
 			{
 				case '%': /* %% print % symbol */
@@ -44,9 +50,9 @@ int _printf(const char *format, ...)
 					break;
 
 				default:
-					print_str("(SKIP:");
-					_putchar(format[i + 1]);
-					print_str(")");
+					_putchar('%');
+                    _putchar(format[i + 1]);
+					length += 2;
 					i++;
 					break;
 			}
