@@ -1,1 +1,7 @@
-# holbertonschool-printf
+# holbertonschool-low_level_programming/holbertonschool-printf
+
+## Running
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+```
