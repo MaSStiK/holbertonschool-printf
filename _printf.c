@@ -39,6 +39,11 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 
+				case 'i': /* %i print int */
+					length += print_int(va_arg(args, int));
+					i++;
+					break;
+
 				case 'c': /* %c print char (promoted to int in va_arg) */
 					_putchar(va_arg(args, int));
 					length++;
@@ -69,3 +74,4 @@ int _printf(const char *format, ...)
 
 	return (length);
 }
+

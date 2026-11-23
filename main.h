@@ -4,7 +4,7 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int get_length(const char *str);
-
+int handle_format(char specifier, va_list *args);
 int print_int(int n);
 int print_str(char *str);
 
