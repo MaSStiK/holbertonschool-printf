@@ -19,15 +19,16 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			/* If % is the last character, print nothing */
 			if (format[i + 1] == '\0')
 			{
 				va_end(args);
 				return (-1);
 			}
-		
+
 			switch (format[i + 1])
 			{
-				case '%': /* %% print % symbol */
+				case '%': /* %% print a % symbol */
 					_putchar('%');
 					length++;
 					i++;
@@ -49,16 +50,16 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 
-				default:
+				default: /* Print an unsupported format specifier */
 					_putchar('%');
-                    _putchar(format[i + 1]);
+					_putchar(format[i + 1]);
 					length += 2;
 					i++;
 					break;
 			}
 		}
 		else
-		{
+		{	/* Print a regular character */
 			_putchar(format[i]);
 			length++;
 		}
