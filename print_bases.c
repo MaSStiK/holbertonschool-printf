@@ -77,3 +77,47 @@ int print_octal(unsigned int n)
 
 	return (count);
 }
+
+/**
+ * print_hex - Prints an unsigned integer in hexadecimal
+ * @n: Unsigned integer to print
+ * @uppercase: 1 for uppercase, 0 for lowercase
+ *
+ * Return: Number of characters printed
+ */
+int print_hex(unsigned int n, int uppercase)
+{
+	char octal[33];
+	int i = 1;
+	int count = 0;
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	octal[0] = '\0';
+
+	while (n > 0)
+	{
+		if (n % 16 < 10)
+			octal[i] = (n % 16) + '0';
+		else
+			octal[i] = 'a' + (n % 16 - 10) - (32 * uppercase);
+
+		n /= 16;
+		i++;
+	}
+
+	i--;
+
+	while (octal[i] != '\0')
+	{
+		_putchar(octal[i]);
+		i--;
+		count++;
+	}
+
+	return (count);
+}
