@@ -44,8 +44,18 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 
+				case 'u': /* %u print unsigned int */
+					length += print_unsigned(va_arg(args, unsigned int));
+					i++;
+					break;
+
 				case 'b': /* %b print binary */
-					length += print_binary(va_arg(args, int));
+					length += print_binary(va_arg(args, unsigned int));
+					i++;
+					break;
+
+				case 'o': /* %o print octal */
+					length += print_octal(va_arg(args, unsigned int));
 					i++;
 					break;
 
