@@ -1,7 +1,11 @@
 # holbertonschool-printf
 
-## Running
+## Building and Running
 
 ```bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c -o app
+```
+
+```bash
+./app
 ```

@@ -44,6 +44,11 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 
+				case 'b': /* %b print binary */
+					length += print_binary(va_arg(args, int));
+					i++;
+					break;
+
 				case 'c': /* %c print char (promoted to int in va_arg) */
 					_putchar(va_arg(args, int));
 					length++;

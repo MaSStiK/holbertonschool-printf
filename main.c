@@ -28,6 +28,10 @@ int main(void)
 	_printf("%\n");
 	_printf("%"); /* will print nothing */
 
+	_printf("%b\n", 98); /* 1100010 */
+	_printf("%b\n", 0); /* 0 */
+	_printf("%b\n", 2); /* 10 */
+
 	printf("\n----- original tests -----\n");
 
 	len = _printf("Let's try to printf a simple sentence.\n");
