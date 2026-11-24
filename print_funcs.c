@@ -39,7 +39,7 @@ int print_int(int n)
 }
 
 /**
- * print_binary - Prints an integer
+ * print_binary - Prints an integer in binary
  * @n: Integer to print
  *
  * Return: Number of characters printed
