@@ -87,7 +87,7 @@ int print_octal(unsigned int n)
  */
 int print_hex(unsigned int n, int uppercase)
 {
-	char octal[33];
+	char hex[33];
 	int i = 1;
 	int count = 0;
 
@@ -97,14 +97,14 @@ int print_hex(unsigned int n, int uppercase)
 		return (1);
 	}
 
-	octal[0] = '\0';
+	hex[0] = '\0';
 
 	while (n > 0)
 	{
 		if (n % 16 < 10)
-			octal[i] = (n % 16) + '0';
+			hex[i] = (n % 16) + '0';
 		else
-			octal[i] = 'a' + (n % 16 - 10) - (32 * uppercase);
+			hex[i] = 'a' + (n % 16 - 10) - (32 * uppercase);
 
 		n /= 16;
 		i++;
@@ -112,9 +112,9 @@ int print_hex(unsigned int n, int uppercase)
 
 	i--;
 
-	while (octal[i] != '\0')
+	while (hex[i] != '\0')
 	{
-		_putchar(octal[i]);
+		_putchar(hex[i]);
 		i--;
 		count++;
 	}
